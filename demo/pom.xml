@@ -5,6 +5,11 @@
     <packaging>pom</packaging>
     <modules>
         <module>encode</module>
+		<module>apollo</module>
+		<module>excel</module>
+		<module>lambda</module>
+		<module>tkmybatis</module>
+		<module>mapper</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
