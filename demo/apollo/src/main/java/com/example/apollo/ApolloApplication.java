@@ -6,6 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
 import tk.mybatis.spring.annotation.MapperScan;
 
+/**
+ * apollo配置中心
+ */
 @SpringBootApplication
 @Configuration
 @EnableApolloConfig("apollo1")
