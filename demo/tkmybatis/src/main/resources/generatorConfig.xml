@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!-- 配置生成器 -->
+<generatorConfiguration>
+    <!--<properties resource="db.properties"/>-->
+    <!--<classPathEntry location="H:\apache-maven-3.3.9\repository\mysql\mysql-connector-java\5.1.40\mysql-connector-java-5.1.40.jar" />-->
+    <context id="mysql" defaultModelType="flat" targetRuntime="MyBatis3Simple">
+        <!-- 生成的Java文件的编码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+        </plugin>
+        <commentGenerator>
+            <!-- 去除自动生成的注释 -->
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+            <!--<property name="addRemarkComments" value="true"></property>-->
+        </commentGenerator>
+        <!-- 必须要有的，使用这个配置链接数据库-->
+
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/mybatisdb?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC"
+                        userId="root"
+                        password="root"/>
+        <!-- 非必需，类型处理器，在数据库类型和java类型之间的转换控制-->
+        <!-- <javaTypeResolver>
+             <property name="forceBigDecimals" value="false"/>
+         </javaTypeResolver>-->
+        <javaTypeResolver type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
+        </javaTypeResolver>
+
+        <!--配置生成的实体包
+           targetPackage：生成的实体包位置，默认存放在src目录下
+           targetProject：目标工程名
+        -->
+        <javaModelGenerator targetPackage="com.example.tkmybatis.entity" targetProject="src/main/java">
+        </javaModelGenerator>
+        <!-- 实体包对应映射文件位置及名称，默认存放在src目录下 -->
+        <sqlMapGenerator targetPackage="mappers" targetProject="src/main/resources">
+        </sqlMapGenerator>
+
+        <!-- 生成DAO的包名和位置-->
+        <javaClientGenerator targetPackage="com.example.tkmybatis.mapper" type="XMLMAPPER" targetProject="src/main/java">
+        </javaClientGenerator>
+
+        <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
+        <table tableName="user_table" domainObjectName="User"/>
+    </context>
+
+</generatorConfiguration>

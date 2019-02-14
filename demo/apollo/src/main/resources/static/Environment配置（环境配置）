@@ -1,0 +1,28 @@
+无先后顺序
+
+1.通过Java System Property
+    可以通过Java的System Property env来指定环境
+    在Java程序启动脚本中，可以指定-Denv=YOUR-ENVIRONMENT
+    如果是运行jar文件，需要注意格式是java -Denv=YOUR-ENVIRONMENT -jar xxx.jar
+    注意key为全小写
+
+2.通过操作系统的System Environment
+    还可以通过操作系统的System Environment ENV来指定
+    注意key为全大写
+
+3.通过配置文件
+    最后一个推荐的方式是通过配置文件来指定env=YOUR-ENVIRONMENT
+    对于Mac/Linux，文件位置为/opt/settings/server.properties
+    对于Windows，文件位置为C:\opt\settings\server.properties
+    文件内容形如：
+        env=DEV
+    目前，env支持以下几个值（大小写不敏感）：
+        DEV
+        Development environment
+        FAT
+        Feature Acceptance Test environment
+        UAT
+        User Acceptance Test environment
+        PRO
+        Production environment
+更多环境定义，可以参考Env.java

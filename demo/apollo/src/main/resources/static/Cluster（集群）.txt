@@ -1,0 +1,32 @@
+优先级从高到低分别为：
+
+1.通过Java System Property apollo.cluster
+    可以通过Java的System Property apollo.cluster来指定
+    在Java程序启动脚本中，可以指定-Dapollo.cluster=SomeCluster
+    如果是运行jar文件，需要注意格式是java -Dapollo.cluster=SomeCluster -jar xxx.jar
+    也可以通过程序指定，如System.setProperty("apollo.cluster", "SomeCluster");
+
+2.通过Spring Boot的配置文件
+    可以在Spring Boot的application.properties或bootstrap.properties中指定apollo.cluster=SomeCluster
+
+3.通过server.properties配置文件
+    可以在server.properties配置文件中指定idc=xxx
+    对于Mac/Linux，文件位置为/opt/settings/server.properties
+    对于Windows，文件位置为C:\opt\settings\server.properties
+
+Cluster Precedence（集群顺序）
+    如果apollo.cluster和idc同时指定：
+        我们会首先尝试从apollo.cluster指定的集群加载配置
+        如果没找到任何配置，会尝试从idc指定的集群加载配置
+        如果还是没找到，会从默认的集群（default）加载
+
+    如果只指定了apollo.cluster：
+        我们会首先尝试从apollo.cluster指定的集群加载配置
+        如果没找到，会从默认的集群（default）加载
+
+    如果只指定了idc：
+        我们会首先尝试从idc指定的集群加载配置
+        如果没找到，会从默认的集群（default）加载
+
+    如果apollo.cluster和idc都没有指定：
+        我们会从默认的集群（default）加载配置

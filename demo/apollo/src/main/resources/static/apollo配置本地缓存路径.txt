@@ -1,0 +1,18 @@
+Apollo客户端会把从服务端获取到的配置在本地文件系统缓存一份,
+用于在遇到服务不可用，或网络不通的时候，依然能从本地恢复配置，不影响应用正常运行。
+
+本地缓存路径默认位于以下路径，所以请确保/opt/data或C:\opt\data\目录存在，且应用有读写权限。
+    Mac/Linux: /opt/data/{appId}/config-cache
+    Windows: C:\opt\data\{appId}\config-cache
+
+本地配置文件名格式：
+    {appId}+{cluster}+{namespace}.properties
+
+    appId就是应用自己的appId，如100004458
+    cluster就是应用使用的集群，一般在本地模式下没有做过配置的话，就是default
+    namespace就是应用使用的配置namespace，一般是application client-local-cache
+
+文件内容以properties格式存储，比如如果有两个key，一个是request.timeout，另一个是batch
+那么文件内容就是如下格式：
+    request.timeout=2000
+    batch=2000

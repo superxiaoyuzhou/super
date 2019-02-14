@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinaums.ework.promote.manager.mapper.PromoteHpTemplateMapper">
+  <resultMap id="BaseResultMap" type="com.chinaums.ework.promote.manager.entity.PromoteHpTemplate">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="TEMPLATE_NAME" jdbcType="NVARCHAR" property="templateName" />
+    <result column="TEMPLATE_JSON" jdbcType="VARCHAR" property="templateJson" />
+    <result column="CREATE_USER_ID" jdbcType="VARCHAR" property="createUserId" />
+    <result column="CREATE_USER_NAME" jdbcType="NVARCHAR" property="createUserName" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_USER_ID" jdbcType="VARCHAR" property="updateUserId" />
+    <result column="UPDATE_USER_NAME" jdbcType="NVARCHAR" property="updateUserName" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="STATUS" jdbcType="CHAR" property="status" />
+    <result column="TEMPLATE_DESC" jdbcType="NVARCHAR" property="templateDesc" />
+  </resultMap>
+</mapper>

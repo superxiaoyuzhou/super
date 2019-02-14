@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinaums.ework.promote.manager.mapper.PromoteNoticeMapper">
+  <resultMap id="BaseResultMap" type="com.chinaums.ework.promote.manager.entity.PromoteNotice">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="PROD_CODE" jdbcType="VARCHAR" property="prodCode" />
+    <result column="TITLE" jdbcType="VARCHAR" property="title" />
+    <result column="SUMMARY" jdbcType="VARCHAR" property="summary" />
+    <result column="CONTENT" jdbcType="VARCHAR" property="content" />
+    <result column="AUTHOR" jdbcType="VARCHAR" property="author" />
+    <result column="SOURCE" jdbcType="VARCHAR" property="source" />
+    <result column="STATUS" jdbcType="CHAR" property="status" />
+    <result column="VALID_DATE_BEGIN" jdbcType="TIMESTAMP" property="validDateBegin" />
+    <result column="VALID_DATE_END" jdbcType="TIMESTAMP" property="validDateEnd" />
+    <result column="CREATE_USER_ID" jdbcType="VARCHAR" property="createUserId" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_USER_ID" jdbcType="VARCHAR" property="updateUserId" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="DEL_FLAG" jdbcType="CHAR" property="delFlag" />
+    <result column="NOTICE_TYPE" jdbcType="VARCHAR" property="noticeType" />
+    <result column="PROMOTE_CODE" jdbcType="VARCHAR" property="promoteCode" />
+  </resultMap>
+</mapper>
